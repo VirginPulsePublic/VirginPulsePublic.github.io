@@ -1,25 +1,15 @@
 - name: Home
   path: index.html
-  section_id: home
-  children:
-    - name: Home default
-      path: index.html
-    - name: Home alternative
-      path: index-alternative.html
-- name: Services
-  path: services.html
-  section_id: services
-- name: About
-  path: about.html
-  section_id: about
-- name: Portfolio
-  path: portfolio.html
-  section_id: portfolio
-  children:
-    - name: Portfolio
-      path: portfolio.html
-    - name: Portfolio single
-      path: portfolio-item.html
+  section_id: home  
+- name: Projects
+  path: projects.html
+  section_id: projects
+- name: Technology
+  path: technology.html
+  section_id: technology
+- name: Careers
+  path: careers.html
+  section_id: careers  
 - name: Blog
   path: blog/
   section_id: blog
