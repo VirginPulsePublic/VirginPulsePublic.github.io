@@ -1,4 +1,5 @@
 name: Virgin Pulse Engineering
+subtitle: Engineering
 markdown: redcarpet
 pygments: true
 excerpt_separator: <!--more-->
