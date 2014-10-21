@@ -1,10 +1,10 @@
-- image: slide-1.jpg
+- image: danceparty.jpg
   desc_location: left
   desc:
-    <h2>This is squarebox</h2>
-    <p>A creative responsive theme.</p>
+    <h2>This is Virgin Pulse</h2>
+    <p>An awesome place to work</p>
     <div class='two spacing'></div>
-    <a class='button boxed'>View Features</a>
+    <a class='button boxed' href='{{site.url}}/careers'>View Careers</a>
 - image: slide-2.jpg
   desc_location: right
   desc:
