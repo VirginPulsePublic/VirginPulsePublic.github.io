@@ -45,6 +45,15 @@ h1, h2, h3, h4 {
   background: #e8e8e4;
 }
 
+.pulse-blue {
+  color: #068CAE;
+}
+
+.pulse-blue-bg {
+  background: #068CAE;
+  color: #fff;
+}
+
 .spacing {
   height: 20px;
 }
@@ -148,7 +157,7 @@ h1, h2, h3, h4 {
 /*special title */
 .special-title i {
   font-size: 50px;
-  color: #fcbf31;
+  color: #068CAE;
   margin-bottom: 15px;
   display: block;
 }
@@ -195,8 +204,8 @@ h1, h2, h3, h4 {
 
 .icon-text-boxed i {
   font-size: 88px;
-  color: #fcbf31;
-  border: 1px solid #fcbf31;
+  color: #068CAE;
+  border: 1px solid #068CAE;
   padding: 35px 0;
   display: block;
   width: 88%;
@@ -208,7 +217,7 @@ h1, h2, h3, h4 {
 }
 
 .icon-text-boxed:hover i {
-  background: #fcbf31;
+  background: #068CAE;
   color: white;
 }
 

@@ -1,21 +1,21 @@
 - image: lounge.jpg
-  desc_location: left
+  desc_location: right
   desc:
     <h2>This is Virgin Pulse</h2>
     <p>An awesome place to work</p>
     <div class='two spacing'></div>
-    <a class='button boxed' href='{{site.url}}/careers'>View Careers</a>
+    <a class='button boxed' href='{{site.url}}/careers'>See Our Jobs</a>
 - image: computer.jpg
   desc_location: right
   desc:
     <h2>Technology</h2>
-    <p>We love code</p>
+    <p>We love code. A lot.</p>
     <div class='two spacing'></div>
-    <a class='button boxed'>Learn More</a>
+    <a class='button boxed'>Learn Our Technology</a>
 - image: pingpong.jpg
-  desc_location: left
+  desc_location: right
   desc:
     <h2>Culture</h2>
     <p>We like to have fun</p>
     <div class='two spacing'></div>
-    <a class='button boxed'>Learn More</a>
+    <a class='button boxed'>See Our Projects</a>
