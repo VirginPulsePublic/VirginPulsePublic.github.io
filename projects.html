@@ -6,10 +6,17 @@ section_id: projects
 projects:
     - name: Virgin Pulse Animation Library
       details: Slick animations for the web
+      image: project-1.png
       desc:
         The Virgin Pulse Animation Library includes reusable animations to be used to spice up a web page. Currently this includes a "bubble burst" animation that shows random bubbles bursting out from behind a UI element. It can be used for emphasis or as a success state. This library exists currently as a jQuery plugin.
     - name: SQS Activity Auditor
       details: Find and search through Amazon Simple Queue Service records 
+      image: project-2.png
+      desc:
+        The SQS Activity Auditor is a multi-tier application that includes both a backend component and a UI component. The application monitors an SQS queue and records the entries that are processed in a database for future searching. The goal is to allow more auditing and debugging to developers trying to figure out which payloads have been processed.
+    - name: SQS Activity Auditor
+      details: Find and search through Amazon Simple Queue Service records 
+      image: project-3.png
       desc:
         The SQS Activity Auditor is a multi-tier application that includes both a backend component and a UI component. The application monitors an SQS queue and records the entries that are processed in a database for future searching. The goal is to allow more auditing and debugging to developers trying to figure out which payloads have been processed.
 
@@ -18,9 +25,8 @@ projects:
 <div class='full'>
   <div class='row'>
     <div class='special-title centered-text'>
-      <i class='icon-star'></i>
       <h2>Featured Projects</h2>
-      <p>Check out some of our featured open source projects and applications</p>
+      <p>Check out some of our featured projects and applications</p>
       <p class='shortline'></p>
     </div>
   </div>
@@ -54,9 +60,12 @@ projects:
           {% assign active_class = "" %}
         {% endif %}
         <div class='member-intro {{active_class}}' id='project-{{forloop.index}}'>
-          <div class='medium-12 large-12 columns'>
+          <div class='medium-8 large-8 columns'>
             <p>{{project.desc}}</p>
           </div>          
+          <div class='medium-4 large-4 columns'>
+            <img src='{{site.url}}/images/{{project.image}}'>
+          </div>
         </div>
       {% endfor %}
 

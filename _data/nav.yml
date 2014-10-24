@@ -1,9 +1,9 @@
 - name: Home
   path: index.html
   section_id: home  
-- name: Projects
-  path: projects.html
-  section_id: projects
+- name: Press
+  path: press.html
+  section_id: press
 - name: Technology
   path: technology.html
   section_id: technology
