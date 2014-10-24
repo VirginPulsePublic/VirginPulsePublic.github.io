@@ -14,7 +14,7 @@ Welcome to my first post. This is a test of the blog publishing ending. This was
 
 Check this cool thing out. Maybe I'll include screenshots. Check this out: 
 
-![Animation Library Bubbles](/images/project-1.png "Animation Library")
+![Animation Library Bubbles](/images/project-1.PNG "Animation Library")
 
 Over all it does the following:
 
