@@ -2,91 +2,70 @@
 layout: default
 title: Projects
 section_id: projects
-categories:
-  - name: Graphic Design
-  - name: Web Design
-  - name: Brand
-  - name: Development
-  - name: Print
 
-works:
-  - image: work-1.jpg
-    title: Beautiful Girl
-    categories:
-      - name: Graphic Design
-  - image: work-2.jpg
-    title: Look at me
-    categories:
-      - name: Web Design
-      - name: Print
-  - image: work-3.jpg
-    title: Am I cute
-    categories:
-      - name: Brand
-  - image: work-4.jpg
-    title: Umbrella
-    categories:
-      - name: Development
-  - image: work-5.jpg
-    title: Canned Bros
-    categories:
-      - name: Print
-      - name: Brand
-  - image: work-6.jpg
-    title: Hale
-    categories:
-      - name: Web Design
-  - image: work-7.jpg
-    title: A beautiful day
-    categories:
-      - name: Web Design
-  - image: work-8.jpg
-    title: Flower book
-    categories:
-      - name: Graphic Design
-  - image: work-1.jpg
-    title: Beautiful Girl
-    categories:
-      - name: Development
-      - name: Print
-  - image: work-2.jpg
-    title: Look at me
-    categories:
-      - name: Brand
-  - image: work-3.jpg
-    title: Am I cute
-    categories:
-      - name: Web Design
-  - image: work-4.jpg
-    title: Umbrella
-    categories:
-      - name: Print
-  - image: work-5.jpg
-    title: Canned Bros
-    categories:
-      - name: Graphic Design
-  - image: work-6.jpg
-    title: Hale
-    categories:
-      - name: Development
-  - image: work-7.jpg
-    title: A beautiful day
-    categories:
-      - name: Print
+projects:
+    - name: Virgin Pulse Animation Library
+      details: Slick animations for the web
+      desc:
+        The Virgin Pulse Animation Library includes reusable animations to be used to spice up a web page. Currently this includes a "bubble burst" animation that shows random bubbles bursting out from behind a UI element. It can be used for emphasis or as a success state. This library exists currently as a jQuery plugin.
+    - name: SQS Activity Auditor
+      details: Find and search through Amazon Simple Queue Service records 
+      desc:
+        The SQS Activity Auditor is a multi-tier application that includes both a backend component and a UI component. The application monitors an SQS queue and records the entries that are processed in a database for future searching. The goal is to allow more auditing and debugging to developers trying to figure out which payloads have been processed.
+
 ---
 
 <div class='full'>
   <div class='row'>
     <div class='special-title centered-text'>
       <i class='icon-star'></i>
-      <h2>Portfolio</h2>
-      <p>Our best and featured works so far</p>
+      <h2>Featured Projects</h2>
+      <p>Check out some of our featured open source projects and applications</p>
       <p class='shortline'></p>
     </div>
   </div>
 </div>
 
+<div class='members'>
+  <div class='full light-yellow no-padding'>
+    <div class='row'>
+      {% for project in page.projects %}
+        {% if forloop.first %}
+          {% assign active_class = "active" %}
+        {% else %}
+          {% assign active_class = "" %}
+        {% endif %}
+        <div class='medium-3 large-3 columns'>
+          <div class='member centered-text {{active_class}}' data-target='#project-{{forloop.index}}'>
+            <h3>{{project.name}}</h3>
+            <p class='position'>{{project.details}}</p>
+            <p class='active-line'></p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class='full white'>
+    <div class='row'>
+      {% for project in page.projects %}
+        {% if forloop.first %}
+          {% assign active_class = "active" %}
+        {% else %}
+          {% assign active_class = "" %}
+        {% endif %}
+        <div class='member-intro {{active_class}}' id='project-{{forloop.index}}'>
+          <div class='medium-12 large-12 columns'>
+            <p>{{project.desc}}</p>
+          </div>          
+        </div>
+      {% endfor %}
 
+    </div>
+  </div>
+
+
+</div>
+<!--
 <div class='row'>
   <div class='gallery-wrapper large-12 columns'>
     <ul class='sub-nav' id='filter'>
@@ -116,7 +95,7 @@ works:
       {% endfor %}
     </ul>
   </div>
-</div>
+</div>-->
 
 
 <div class="three spacing"></div>
