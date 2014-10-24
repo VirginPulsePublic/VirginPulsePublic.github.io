@@ -3,6 +3,7 @@ layout: post
 title:  "Testing the blog publishing"
 date:   2014-10-24 15:46:00 +0500
 author: James Martin
+comments: true
 ---
 
 #Hello World

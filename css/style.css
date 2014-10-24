@@ -1,3 +1,11 @@
+a {
+  color: #068CAE;
+}
+
+a:hover, a:focus {
+  color: #068CAE;
+}
+
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: white;
 }
@@ -631,7 +639,7 @@ ul.info i:hover {
   color: #333333;
 }
 .post .info p a:hover {
-  color: #fcbf31;
+  color: #068CAE;
 }
 .post .other-info {
   list-style: none;
@@ -691,17 +699,17 @@ ul.info i:hover {
 
 .timestamp {
   width: 80px;
-  border: 1px solid #fcbf31;
+  border: 1px solid #068CAE;
 }
 .timestamp .month {
-  background: #fcbf31;
+  background: #068CAE;
   color: white;
-  border-bottom: 1px solid #fcbf31;
+  border-bottom: 1px solid #068CAE;
   display: block;
   padding: 5px 0;
 }
 .timestamp .date {
-  color: #fcbf31;
+  color: #068CAE;
   display: block;
   padding: 20px 0;
   font-size: 36px;
