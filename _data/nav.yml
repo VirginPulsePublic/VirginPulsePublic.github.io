@@ -1,12 +1,6 @@
 - name: Home
   path: index.html
   section_id: home  
-- name: Press
-  path: press.html
-  section_id: press
-- name: Technology
-  path: technology.html
-  section_id: technology
 - name: Careers
   path: careers.html
   section_id: careers  

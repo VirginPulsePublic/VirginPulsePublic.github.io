@@ -119,18 +119,12 @@ members:
         color: pulse-blue-bg
   - image: dev-3.jpg
     name: Tyler Hoersch
-    position: Super Awesome Developer
+    position: Agent of S.H.I.E.L.D.
     desc:
-      Tyler's info goes here.
+      REDACTED
     socials:
-      - name: twitter
-        link: #
-        color: pulse-blue-bg
-      - name: facebook
-        link: #
-        color: pulse-blue-bg
-      - name: mail
-        link: #
+      - name: github
+        link: http://github.com/thoersch
         color: pulse-blue-bg
   - image: dev-4.jpg
     name: Corey Hall
@@ -152,7 +146,17 @@ members:
 
 {% include slider.html %}
 
-{% include whys.html %}
+<div class='full'>
+  <div class='row'>
+    <div class='medium-6 large-6 columns'>
+
+    {% include events.html %}
+      </div>
+      <div class='medium-6 large-6 columns'>
+        {% include blogpreview.html %}
+      </div>
+  </div>
+</div>
 
 <!--<div class='full'>
   <div class='row'>
@@ -235,9 +239,9 @@ members:
       </div>
     {% endfor %}
   </div>
-</div>-->
+</div>
 
-<!--
+
 <div class='full light-yellow'>
   <div class='row'>
     <div class='special-title centered-text'>

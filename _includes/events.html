@@ -1,0 +1,9 @@
+
+
+<div class='events'>
+    <h3>Upcoming Events</h3>
+	{% for event in site.data.events %}
+		<h4>{{ event.name }}</h4>
+		<p>{{ event.description }}</p>
+	{% endfor %}
+</div>
