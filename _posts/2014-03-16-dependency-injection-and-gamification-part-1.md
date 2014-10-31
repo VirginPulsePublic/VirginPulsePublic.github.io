@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dependency Injection and Gamification -- Part 1"
+title:  "Dependency Injection and Gamification - Part 1"
 date:   2014-03-16 14:46:00 +0500
 author: Steve Shi
 comments: true
@@ -16,7 +16,7 @@ Some context: Stashbadgr is a gamification component that awards Jira users with
 
 First, understand where the dependencies are.  In Stashbadgr, the dependencies exist between Achievement Manager and Achievements.  The use case is to be able to process an event (when Changesets are committed ) with AchievementManager, which in turn calls the associated Achievement classes to check various business rules. These business rules are subject to change and new rules can be added in the future, and we don’t want to have to change our processor code in order to accommodate the new or revised rules.  This processing is inside the changeset processing class:  stash-badgr / src / main / java / nl / stefankohler / stash / badgr / idx / BadgrChangesetIndex.java:
 
-~~~
+~~~java
 private void processObject(AchievementContext achievementContext, Changeset changeset,
                                Object validator, Achievement.AchievementType achievementType) {
     try {
