@@ -39,7 +39,7 @@ Look at stash-badgr / src / main / java / nl / stefankohler / stash / badgr / Ac
 
 Look at the postProcessAfterInitialization method, and you can see it’s adding the Achievement classes to the AchievementManager.
 
-~~~
+~~~java
  * The AchievementRegisterPostProcess is triggered by the auto-scanning
  * of  Achievement annotated classes. If the new bean is of the type
  * {@link Achievement} then it will be registered by the {@link AchievementManager}.
@@ -78,7 +78,7 @@ public class AchievementRegisterPostProcessor implements BeanPostProcessor {
 
 So, all that’s left (in simplistic terms) is to have the service automatically instantiate various Achievement beans at start-up time, then the framework will always register these classes to AchievementManager, and do so dynamically without hardcoding where Achievement classes are.   Let’s go take a look at the configurations:stash-badgr / src / main / resources / META-INF / spring / plugin-context.xml and see how that’s done.
 
-~~~
+~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -113,7 +113,7 @@ stash-badgr / src / main / resources / atlassian-plugin.xml because stashbadgr i
 
 5. Finally, when every associated Achievement is checked, the Achievements are grouped in an AchievementContext object, and changeset processor stash-badgr / src / main / java / nl / stefankohler / stash / badgr / idx / BadgrChangesetIndex.java calls updateAchievement to award the Achievements, which in turn, calls achievementManager.grantAchievement inside a transaction:
 
-~~~
+~~~java
 public void onAfterIndexing(IndexingContext context) {
     AchievementContext achievementContext = context.get(BADGER_INDEXING_STATE);
     if (achievementContext != null) {
