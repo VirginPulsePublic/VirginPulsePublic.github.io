@@ -16,7 +16,7 @@ Some context: Stashbadgr is a gamification component that awards Jira users with
 
 First, understand where the dependencies are.  In Stashbadgr, the dependencies exist between Achievement Manager and Achievements.  The use case is to be able to process an event (when Changesets are committed ) with AchievementManager, which in turn calls the associated Achievement classes to check various business rules. These business rules are subject to change and new rules can be added in the future, and we don’t want to have to change our processor code in order to accommodate the new or revised rules.  This processing is inside the changeset processing class:  stash-badgr / src / main / java / nl / stefankohler / stash / badgr / idx / BadgrChangesetIndex.java:
 
-{% highlight java %}
+```java
 private void processObject(AchievementContext achievementContext, Changeset changeset,
                                Object validator, Achievement.AchievementType achievementType) {
     try {
@@ -29,7 +29,7 @@ private void processObject(AchievementContext achievementContext, Changeset chan
         //error handling
     }
 }
-{% endhighlight %}
+```
 
 As you can see, it loops through all the Achievements associated with a given achievementType, (in our case, we will be using Action ids)  and these Achievements are managed via AchievementManager.
 
@@ -39,7 +39,7 @@ Look at stash-badgr / src / main / java / nl / stefankohler / stash / badgr / Ac
 
 Look at the postProcessAfterInitialization method, and you can see it’s adding the Achievement classes to the AchievementManager.
 
-{% highlight java %}
+```java
  * The AchievementRegisterPostProcess is triggered by the auto-scanning
  * of  Achievement annotated classes. If the new bean is of the type
  * {@link Achievement} then it will be registered by the {@link AchievementManager}.
@@ -74,11 +74,11 @@ public class AchievementRegisterPostProcessor implements BeanPostProcessor {
         return bean;
     }
 }
-{% endhighlight %}
+```
 
 So, all that’s left (in simplistic terms) is to have the service automatically instantiate various Achievement beans at start-up time, then the framework will always register these classes to AchievementManager, and do so dynamically without hardcoding where Achievement classes are.   Let’s go take a look at the configurations:stash-badgr / src / main / resources / META-INF / spring / plugin-context.xml and see how that’s done.
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -93,7 +93,7 @@ So, all that’s left (in simplistic terms) is to have the service automatically
     </context:component-scan>
 
 </beans>
-{% endhighlight %}
+```
 
 include-filer is a Spring component scan directive. The pattern above says to match anything that has an annotation type of nl.stefankohler.stash.badgr.Achievement And we can see that in the Achievement classes, they all have something like this:
 @Achievement
@@ -113,14 +113,14 @@ stash-badgr / src / main / resources / atlassian-plugin.xml because stashbadgr i
 
 5. Finally, when every associated Achievement is checked, the Achievements are grouped in an AchievementContext object, and changeset processor stash-badgr / src / main / java / nl / stefankohler / stash / badgr / idx / BadgrChangesetIndex.java calls updateAchievement to award the Achievements, which in turn, calls achievementManager.grantAchievement inside a transaction:
 
-{% highlight java %}
+```java
 public void onAfterIndexing(IndexingContext context) {
     AchievementContext achievementContext = context.get(BADGER_INDEXING_STATE);
     if (achievementContext != null) {
         achievementContext.updateAchievements();
     }
 }
-{% endhighlight %}
+```
 
 So as you can see, if you ever need to add a new Achievement, all you have to do is to create a new Achievement class, annotate it to be nl.stefankohler.stash.badgr.Achievement type, and associate the Achievement to an Action type. In stashbadgr, the related type is hardcoded inside the Achivement getType method as “CHANGESET”, but you can certainly see how this can be done via a database lookup, for example, using an event id for an Action, and associated that event id to a group of Achievements in the database.
 

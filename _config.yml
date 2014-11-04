@@ -1,7 +1,6 @@
 name: Virgin Pulse Engineering
 subtitle: Engineering
 markdown: redcarpet
-highlighter: rouge
 excerpt_separator: <!--more-->
 paginate: 3
 paginate_path: "blog/page:num"
