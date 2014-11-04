@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "In Strem Event Processing Architecture"
+title:  "In Stream Event Processing Architecture"
 date:   2014-03-17 14:46:00 +0500
 author: Steve Shi
 comments: true
